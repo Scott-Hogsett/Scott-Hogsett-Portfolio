@@ -433,10 +433,35 @@ a.project-card-link:hover .project-card {
     }
 }
 
+/* Home page: single column, full-width flow */
+.home-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.home-container .content-left {
+    max-width: 100%;
+}
+
+/* Project cards sit side by side on the home page */
+.project-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 620px) {
+    .project-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Specific logic for the Home Page stacking at a smaller size */
 @media (max-width: 725px) {
     .home-container {
-        grid-template-columns: 1fr; /* Stacks the columns vertically */
+        grid-template-columns: 1fr;
     }
 
     .home-container .sidebar-right {
