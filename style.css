@@ -14,9 +14,9 @@ body {
 
 P {
   color: #000000;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
 }
 
 h1 {
@@ -58,6 +58,12 @@ span {
 
 ul {
   color: #0B3D2E;
+}
+
+li {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
 }
 
  /* --- Navigation --- */
@@ -469,15 +475,81 @@ a.project-card-link:hover .project-card {
     .home-container {
         grid-template-columns: 1fr;
         padding: 0 3rem;
-
     }
 
     .home-container .sidebar-right {
-        order: 1; /* Keeps the "Check out my work" section below the bio */
+        order: 1;
+    }
+}
 
 @media (max-width: 620px) {
-            
     h1 {
-      line-height: 4.5rem;
+        line-height: 4.5rem;
+    }
+}
+
+/* --- Dual Timeline Layout --- */
+
+.dual-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 2rem;
+    margin: 1.5rem 0;
+}
+
+.dual-timeline-col h2 {
+    margin-bottom: 0;
+}
+
+.dual-timeline-divider {
+    background: #0B3D2E;
+    width: 1px;
+}
+
+/* --- Timeline rows --- */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem 0;
+    border-top: 1px solid #0B3D2E;
+}
+
+.timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.timeline-date {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #0B3D2E;
+}
+
+.timeline-org {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    margin: 0 !important;
+}
+
+/* --- Responsive: stack on mobile --- */
+
+@media (max-width: 768px) {
+    .dual-timeline {
+        grid-template-columns: 1fr;
+        gap: 2rem 0;
+    }
+
+    .dual-timeline-divider {
+        width: 100%;
+        height: 1px;
     }
 }
